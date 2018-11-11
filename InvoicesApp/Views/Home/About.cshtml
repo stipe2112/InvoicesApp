@@ -1,0 +1,30 @@
+﻿@model IEnumerable<InvoicesApp.ViewModels.CreationDateGroup>
+
+@{
+    ViewBag.Title = "Invoices Creation Statistics";
+}
+
+<h2>Invoices Creation Statistics</h2>
+
+<table>
+    <tr>
+        <th>
+            Creation Dates      
+        </th>
+        <th>
+            Invoices
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @item.InvoicesCount
+            </td>
+        </tr>
+    }
+</table>
